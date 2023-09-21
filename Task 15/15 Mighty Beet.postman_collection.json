@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "42db14ef-db2e-44eb-9d6d-a8e6c5882186",
+		"name": "Homework Lesson 18 Mighty Beet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29324466",
+		"_collection_link": "https://orange-escape-755676.postman.co/workspace/d278341e-9533-4d4f-b1b8-799260f51c55/collection/29324466-42db14ef-db2e-44eb-9d6d-a8e6c5882186?action=share&source=collection_link&creator=29324466"
+	},
+	"item": [
+		{
+			"name": "POST",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"female\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"{{$randomFullName}}\",\r\n\"age\":25,\r\n\"gender\":\"female\",\r\n\"city\":\"{{$randomCity}}\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users",
+					"protocol": "https",
+					"host": [
+						"em",
+						"staging",
+						"api",
+						"onereach",
+						"ai"
+					],
+					"path": [
+						"http",
+						"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Columbus\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users?id=d1ef876f-a2dd-4adf-90ec-b0626b892200",
+					"protocol": "https",
+					"host": [
+						"em",
+						"staging",
+						"api",
+						"onereach",
+						"ai"
+					],
+					"path": [
+						"http",
+						"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+						"users"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "d1ef876f-a2dd-4adf-90ec-b0626b892200"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Columbus\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"age\": 25,\r\n    \"city\": \"Columbus\",\r\n    \"gender\": \"male\",\r\n    \"name\": \"Rafael Gibson\",\r\n    \"id\": \"d1ef876f-a2dd-4adf-90ec-b0626b892200\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users",
+					"protocol": "https",
+					"host": [
+						"em",
+						"staging",
+						"api",
+						"onereach",
+						"ai"
+					],
+					"path": [
+						"http",
+						"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
